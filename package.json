@@ -1,0 +1,37 @@
+{
+  "name": "smart-brain-api-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/app.js",
+  "scripts": {
+    "start:ts": "tsc",
+    "start:js": "nodemon build/app.js",
+    "start": "tsc && concurrently npm:start:*",
+    "compile": "tsc && node build/app.js",
+    "dev": "./node_modules/nodemon/bin/nodemon.js -e ts --exec \"npm run compile\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/knex": "^0.16.1",
+    "@types/redis": "^4.0.11",
+    "bcrypt": "^5.0.1",
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.15",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "redis": "^4.0.1"
+  }
+}

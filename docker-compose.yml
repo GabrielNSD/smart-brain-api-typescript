@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  smart-brain-api:
+    container_name: backend
+    build: ./
+    command: npm start
+    ports: 
+      - "3005:3005"
+    volumes:
+      - ./:/usr/src/smart-brain-api-typescript
+    environment:
+      POSTGRES_URI: postgres://useruser:password@postgres:5432/smart-brain-docker
+    #envfile missing
+    links:
+      - postgres
+  
+  postgres:
+    container_name: database
+    build: ./postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: smart-brain-docker
+      POSTGRES_USER: useruser
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: postgres
