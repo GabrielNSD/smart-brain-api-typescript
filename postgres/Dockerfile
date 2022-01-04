@@ -1,4 +1,4 @@
-FROM postgres:13.3
+FROM postgres:14.1-alpine
 
 ADD /tables/ /docker-entrypoint-initdb.d/tables/
 ADD /seed/ /docker-entrypoint-initdb.d/seed/
