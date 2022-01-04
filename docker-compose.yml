@@ -12,7 +12,9 @@ services:
       - ./:/usr/src/smart-brain-api-typescript
     environment:
       POSTGRES_URI: postgres://useruser:password@postgres:5432/smart-brain-docker
-    #envfile missing
+      REDIS_URI: redis://redis:6379
+    env_file:
+      - ./.env
     links:
       - postgres
   
@@ -29,3 +31,8 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: smart-brain-docker
       POSTGRES_HOST: postgres
+  
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
